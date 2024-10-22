@@ -1,0 +1,383 @@
+:root {
+  --bg: #F6F8FC;
+  --primary: #ca633c;
+  --secondary: #e36f58;
+  --h2-color: #5B5D72;
+  --text: white;
+  --cube-side: 2.75rem;
+  --cube-side-half: calc(var(--cube-side) / 2);
+  --border-radius: 2rem;
+  --bg: #060D23;
+  --btn-bg: #e36f58;
+  --glow-size: 0.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%; 
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire background */
+  z-index: -1; /* Places the image behind other elements */
+}
+
+/* button */
+.button-glow {
+  min-width: 10rem;
+  min-height: 3rem;
+  text-decoration: none;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  position: fixed; /* Change to fixed for a sticky button */
+  top: 20px; 
+  left: 50%; 
+  transform: translateX(-50%); /* Centering adjustment */
+  z-index: 2; 
+  border-radius: var(--border-radius);
+  transition: all 0.5s;
+  gap: 0.5rem;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 17px;
+  box-shadow: 0 1px 4px black;
+}
+
+.button-glow:before {
+  content: '';
+  background: linear-gradient(to right, #cc5429,#eb5d41,
+          #581133, #922858, #cc5429, #eb5d41,
+          #581133, #922858, #cc5429);
+  position: absolute;
+  background-size: 300%;
+  z-index: -1;
+  filter: blur(var(--glow-size));
+  width: calc(100% + var(--glow-size));
+  height: calc(100% + var(--glow-size));
+  opacity: 0;
+  border-radius: var(--border-radius);
+  animation: glow 25s alternate infinite;
+  transition: opacity .5s linear;
+}
+
+.button-glow:active {
+  background: var(--btn-bg);
+}
+
+.button-glow:hover:before {
+  opacity: 2;
+}
+
+.button-glow:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--btn-bg);
+  left: 0;
+  top: 0;
+  border-radius: var(--border-radius);
+}
+
+@keyframes glow {
+  0% {
+      background-position: 0 0;
+  }
+
+  50% {
+      background-position: 300% 0;
+  }
+
+  100% {
+      background-position: 0 0;
+  }
+}
+
+
+
+.burgers {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 6.5rem 6.5rem 6.5rem;
+  grid-template-rows: 8rem 8rem;
+  gap: 2rem;
+  align-items: center;
+  
+}
+
+.burger-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  height: 4.5rem;
+  
+}
+
+/* burger 06 */
+.burger-6 #ck-6 {
+  display: none;
+  
+}
+
+.burger-6 .toggle {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition-duration: .5s;
+  
+}
+
+.burger-6 .bars {
+  width: 100%;
+  height: 5px;
+  background: var(--primary);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px black;
+}
+
+.burger-6 #bar2 {
+  transition-duration: .8s;
+}
+
+.burger-6 #bar1, #bar3 {
+  width: 70%;
+}
+
+.burger-6 input[type='checkbox']:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: .5s;
+}
+
+.burger-6 input[type='checkbox']:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: .5s;
+}
+
+.burger-6 input[type='checkbox']:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: .5s;
+}
+
+.burger-6 input[type='checkbox']:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: .5s;
+}
+
+.burger-6 input[type='checkbox']:checked + .toggle {
+  transition-duration: .5s;
+  transform: rotate(180deg);
+}
+
+/* burger dropdown */
+.burger-6 .dropdown-menu {
+  display: none; /* Oculto por padrão */
+  position: absolute;
+  top: 4.5rem; /* Ajuste a posição conforme necessário */
+  background-color: #a45c7c94;
+  border: 1px solid #a45c7c94;
+  padding: 10px;
+  box-shadow: 0 2px 8px #ca633c;
+  border-radius: 8px;
+}
+
+.burger-6 .dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.burger-6 .dropdown-menu ul li {
+  margin: 8px 0;
+}
+
+.burger-6 .dropdown-menu ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  display: block;
+  font-family: monospace;
+  font-size: 18px;
+  transition: 1s;
+ 
+}
+
+.burger-6 .dropdown-menu ul li a:hover {
+  background-color: #f3bc7880; 
+  transition: 1s;
+  border-radius: 10px;
+}
+
+/* Mostrar o menu dropdown quando o checkbox estiver marcado */
+.burger-6 #ck-6:checked ~ .dropdown-menu {
+  display: block;
+}
+
+/* cabeçalho info */
+.cabecalho {
+  position: absolute;
+  top: 20px; /* Alinha com o botão */
+  left: calc(50% + 7rem); /* Mantém o cabeçalho à direita do botão */
+  width: 80vh; /* Reduz a largura para melhor visualização */
+  height: auto; /* Deixa a altura flexível */
+  display: flex;
+  flex-direction: column; /* Permite que os elementos internos sejam empilhados */
+  align-items: center; /* Centraliza os itens */
+  padding: 20px;
+  font-family: monospace;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
+  backdrop-filter: blur(16px);
+  background-color: rgba(255, 255, 255, 0.1);
+  gap: 20px;
+  transition: all 0.3s ease; /* Transição suave para transformações */
+}
+
+.cabecalho:hover {
+  transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.7); /* Aumenta a sombra no hover */
+  background-color: #ffffff21;
+  backdrop-filter: none;
+  border-radius: var(--border-radius);
+}
+
+.dropdown-menu {
+  display: none; 
+  flex-direction: column;
+  align-items: flex-start; /* Alinha à esquerda */
+  width: 100%; 
+  margin-top: 10px;
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+}
+
+.cabecalho:hover .dropdown-menu {
+  display: flex; /* Exibe o conteúdo ao passar o mouse */
+}
+
+.cabecalho h1 {
+  font-size: 1.2rem; /* Ajusta o tamanho da fonte */
+  color: white;
+  margin: 0;
+  text-decoration: underline;
+  font-weight: lighter;
+  margin-left: 0;
+}
+
+.cabecalho h2{
+  color: #960747;
+  text-decoration: underline;
+}
+
+.cabecalho h3 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right: 140px;
+  font-size: 1.4rem; /* Reduz ligeiramente o tamanho do subtítulo */
+  color:  #960747;
+}
+
+.cabecalho h4{
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #000000;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.foto {
+  
+  background-size: cover;
+  background-position: center; 
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Suaviza a sombra */
+  position:absolute;
+  margin-top: -50px;
+  left: calc(58% + 2rem);
+  margin-left: 100px;
+}
+
+
+.habilidade{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+}
+
+.habilidade p{
+  font-size: 0.8rem;
+}
+
+.habilidade p:hover{
+  color: #960747;
+}
+
+.habilidade:hover img{
+  background-color: #960747;
+  box-shadow: 0px 8px 20px rgb(255, 238, 0);
+}
+
+.habilidade img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+.habilidades-todas{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  border-radius: 50px;
+}
+
+header{
+  position: fixed;
+  z-index: 1;
+}
+header li{
+  display: inline-block;
+}
+
+
+
+
+
