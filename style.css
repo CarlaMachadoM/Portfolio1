@@ -243,30 +243,31 @@ body, html {
 /* cabeçalho info */
 .cabecalho {
   position: absolute;
-  top: 20px; /* Alinha com o botão */
-  left: calc(50% + 7rem); /* Mantém o cabeçalho à direita do botão */
-  width: 80vh; /* Reduz a largura para melhor visualização */
-  height: auto; /* Deixa a altura flexível */
+  top: 20px;
+  left: calc(50% + 7rem);
+  width: 80vh;
+  height: auto;
   display: flex;
-  flex-direction: column; /* Permite que os elementos internos sejam empilhados */
-  align-items: center; /* Centraliza os itens */
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
   font-family: monospace;
   border-radius: var(--border-radius);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   border: 1px solid white;
-  backdrop-filter: blur(16px);
-  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px); /* Aplica o blur no fundo */
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
   gap: 20px;
-  transition: all 0.3s ease; /* Transição suave para transformações */
+  transition: all 0.3s ease;
 }
 
 .cabecalho:hover {
-  transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.7); /* Aumenta a sombra no hover */
+  transform: scale(1.1);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
   background-color: #ffffff21;
-  backdrop-filter: none;
+  backdrop-filter: blur(12px); /* Mantém o blur no fundo */
   border-radius: var(--border-radius);
+  font-weight: lighter;
 }
 
 .dropdown-menu {
@@ -275,8 +276,8 @@ body, html {
   align-items: flex-start; /* Alinha à esquerda */
   width: 100%; 
   margin-top: 10px;
-  backdrop-filter: blur(6px);
   border-radius: 10px;
+  backdrop-filter: none;
 }
 
 .cabecalho:hover .dropdown-menu {
@@ -286,15 +287,19 @@ body, html {
 .cabecalho h1 {
   font-size: 1.2rem; /* Ajusta o tamanho da fonte */
   color: white;
-  margin: 0;
+  margin-right: 100px;
   text-decoration: underline;
   font-weight: lighter;
-  margin-left: 0;
+  margin-bottom: 10px;
+  backdrop-filter: none
 }
 
 .cabecalho h2{
   color: #960747;
   text-decoration: underline;
+  backdrop-filter: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .cabecalho h3 {
@@ -303,31 +308,41 @@ body, html {
   margin-right: 140px;
   font-size: 1.4rem; /* Reduz ligeiramente o tamanho do subtítulo */
   color:  #960747;
+  backdrop-filter: none
 }
 
 .cabecalho h4{
+  margin-top: 10px;
   margin-bottom: 10px;
   font-size: 1rem;
   color: #000000;
+  backdrop-filter: none
 }
+
+.cabecalho h1, .cabecalho h2, .cabecalho h3, .cabecalho h4 {
+  backdrop-filter: none; /* Remove o blur dos textos */
+}
+
 
 .infos {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  backdrop-filter: none
 }
 
+
 .foto {
-  
+  backdrop-filter: none; /* Remove o blur da imagem */
   background-size: cover;
   background-position: center; 
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Suaviza a sombra */
-  position:absolute;
-  margin-top: -50px;
-  left: calc(58% + 2rem);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra na imagem */
+  position: absolute;
+  margin-top: -55px;
+  left: calc(58% + 0rem);
   margin-left: 100px;
 }
 
@@ -338,7 +353,7 @@ body, html {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  
+  backdrop-filter: none
 }
 
 .habilidade p{
@@ -352,12 +367,14 @@ body, html {
 .habilidade:hover img{
   background-color: #960747;
   box-shadow: 0px 8px 20px rgb(255, 238, 0);
+  cursor: pointer;
 }
 
 .habilidade img{
   width: 30px;
   height: 30px;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 .habilidades-todas{
@@ -367,6 +384,7 @@ body, html {
   flex-wrap: wrap;
   gap: 30px;
   border-radius: 50px;
+  backdrop-filter: none
 }
 
 header{
