@@ -27,3 +27,4 @@ document.addEventListener("click", (event) => {
         dropdown.classList.remove('no-blur');
     }
 });
+

@@ -42,7 +42,7 @@ body, html {
 /* button */
 .button-glow {
   min-width: 12rem;
-  min-height: 3.5rem;
+  min-height: 10rem;
   text-decoration: none;
   user-select: none;
   display: flex;
@@ -62,7 +62,13 @@ body, html {
   font-weight: bold;
   font-size: 17px;
   box-shadow: 0 1px 4px black;
+
 }
+
+.button-glow:hover{
+  box-shadow: 10px 10px 22px black;
+}
+
 
 .button-glow:before {
   content: '';
@@ -284,6 +290,7 @@ body, html {
   color: white; /* Para garantir que o texto seja legível */
 }
 
+
 .cabecalho h1 {
   font-size: 1.5rem; 
   margin-right: 100px;
@@ -423,20 +430,50 @@ header li{
   height: 80px;
   cursor: pointer;
   border-radius: 50%;
-  border: 3px solid #f7f7f7;
   filter: drop-shadow(-20px 0 10px rgba(0, 0, 0, 0.1));
   backdrop-filter: none;
+  
+}
+
+.profile  a::after,
+.profile a::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  z-index: -1;
+
+  padding: 3px;
+  animation: spin 5s linear infinite;
 }
 
 .profile:hover {
   transform: scale(1.05);
   transition: all 0.2s ease-in-out;
   backdrop-filter: none;
+  background: conic-gradient(from var(--angle), #ff4400, rgb(255, 0, 128));
+  padding: 3px;
+  animation: spin 5s linear infinite;
 }
 
-.book{
-  width: 40px;
-  height: 40px;
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  from {
+      --angle: 0deg;
+  }
+
+  to {
+      --angle: 360deg;
+  }
 }
 
 .email {
@@ -447,8 +484,8 @@ header li{
 }
 
 .dropdown__wrapper {
-  width: 300px;
-  height: 200px;
+  width: 80vh;
+  height: 250px;
   top: 150px;
   right: 20px;
   position: absolute;
@@ -459,24 +496,28 @@ header li{
   gap: 4px;
   animation: fadeOutAnimation ease-in-out 0.3s forwards;
   backdrop-filter: blur(16px);
-  background-color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to right, #ff440098 0%, rgba(255, 105, 180, 0.322)100%);
+
   overflow: hidden; /* Changed from overflow-y: auto */
-  border: 1px solid white
+  border: 1px solid white;
+  
 }
+
 
 .dropdown__wrapper.no-blur {
   backdrop-filter: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  width: 300px;
+  width: 80vh;
   height: 250px;
+  
 }
 
 .dropdown__wrapper--fade-in {
   animation: fadeInAnimation ease-in-out 0.3s forwards;
   backdrop-filter: none;
-  width: 300px;
   height: 250px;
+  width: 80vh;
 }
+
 
 .none {
   display: none;
@@ -495,7 +536,7 @@ header li{
   flex-wrap: wrap;
   gap: 38px;
   padding: 20px;
-  margin-top: 10px;
+  margin-top: -10px;
   margin-left: 25px
 }
 
@@ -515,25 +556,26 @@ header li{
 }
 
 .skill-item:hover img {
-  background-color: #960747a8;
-  box-shadow: 0px 8px 20px rgb(255, 238, 0);
+  background-color: #ca065e62;
+  box-shadow: 0px 8px 20px #ff440098;
   cursor: pointer;
-  border-radius: 30%;
+  border-radius: 20%;
 }
 
 .skill-name {
-  position: absolute; /* Posiciona o h1 em relação ao elemento pai */
-  top: 100%; /* Posiciona o h1 abaixo da imagem */
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translateX(-50%); /* Ajusta a centralização */
-  color: #960747; /* Define a cor do texto */
-  padding: 5px 10px; /* Adiciona espaçamento ao texto */
-  border-radius: 5px; /* Define um arredondamento leve para o h1 */
+  position: absolute;
+  top: 100%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  color: #960747; 
+  padding: 5px 10px;
+  border-radius: 5px; 
   display: none; /* Oculta o h1 por padrão */
   font-family: monospace;
   font-weight: lighter;
   transition: 1s;
-  animation: bouncing 1s
+  animation: bouncing 1s;
+  margin-bottom: 10px
 }
 
 .anim {
@@ -550,7 +592,7 @@ header li{
   display: block; /* Exibe o h1 ao passar o mouse */
   font-size: 1.5rem;
   transition: 1s;
-  color: #960747;
+  background-color: #ca623c98;
   text-decoration: none;
   padding: 10px;
   
@@ -561,10 +603,10 @@ header li{
   width: 3rem;
 }
 .css:hover{
-  background-color: #960747a8;
-  box-shadow: 0px 0px 0px rgb(255, 238, 0);
+  
+  box-shadow: 0px 0px 0px #ca623c98;
   cursor: pointer;
-  border-radius: 30%;
+ 
 }
 
 .javascript{
@@ -572,7 +614,7 @@ header li{
   width: 3rem;
 }
 .javascript:hover{
-  background-color: #960747a8;
+  background: linear-gradient(to right rgba(255, 255, 255, 0.651), hotpink);
   box-shadow: 0px 0px 0px rgb(255, 238, 0);
   cursor: pointer;
   border-radius: 30%;
@@ -583,7 +625,7 @@ header li{
   width: 3rem;
 }
 .python:hover{
-  background-color: #960747a8;
+  background: linear-gradient(to right rgba(255, 255, 255, 0.651), hotpink);
   box-shadow: 0px 0px 0px rgb(255, 238, 0);
   cursor: pointer;
   border-radius: 30%;
@@ -594,7 +636,7 @@ header li{
   width: 3rem;
 }
 .figma:hover{
-  background-color: #960747a8;
+  background: linear-gradient(to right rgba(255, 255, 255, 0.651), hotpink);
   box-shadow: 0px 0px 0px rgb(255, 238, 0);
   cursor: pointer;
   border-radius: 30%;
@@ -605,7 +647,7 @@ header li{
   width: 3rem;
 }
 .github:hover{
-  background-color: #cc065fa8;
+  background: linear-gradient(to right rgba(255, 255, 255, 0.651), hotpink);
   box-shadow: 0px 0px 0px rgb(255, 238, 0);
   cursor: pointer;
   border-radius: 30%;
@@ -615,8 +657,8 @@ header li{
   font-size: 1.8rem;
   color: #000000;
   margin-top: 10px;
-  margin-left: 150px;
-  text-decoration: underline #cc065f;
+  margin-left: 130px;
+
 }
 
 @keyframes fadeInAnimation {
