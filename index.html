@@ -40,55 +40,69 @@
         Meus projetos
     </a>
 
+    <!-- Cabeçalho -->
     <header class="cabecalho"> 
-        <ul>
-            <li class="dropdown">
-                <a href="#" class="menu">
-                    <h1>Carla Machado Abi Sáber Miguel
-                        <br>
-                    <h2>Desenvolvedora de sistemas</h2>   
-                        <img src="images/carla.jpeg" class="foto">
-                    </h1>
-                </a>
-                <div class="dropdown-menu"> 
-                    <article class="infos">
-                        <span class="habilidades">
-                            <h4>Habilidades:</h4>
-                            <span class="habilidades-todas">
-                                <span class="habilidade">
-                                    <p>HTML</p>
-                                    <img src="images/html (1).png" alt="html">
-                                </span>
-                                <span class="habilidade">
-                                    <p>CSS</p>
-                                    <img src="images/style-sheet.png" alt="css">
-                                </span>
-                                <span class="habilidade">
-                                    <p>JavaScript</p>
-                                    <img src="images/java-script.png" alt="JavaScript">
-                                </span>
-                                <span class="habilidade">
-                                    <p>Python</p>
-                                    <img src="images/python.png" alt="Python">
-                                </span>
-                                    <span class="habilidade">
-                                        <p>Figma</p>
-                                        <img src="images/figma.png" alt="Figma">
-                                    </span>
-                                    <span class="habilidade">
-                                        <p>Git/Github</p>
-                                        <img src="images/github.png" alt="Github">
-                                    </span>
-                                </span>
-                            </span>
-                        </span>
-                    </article>
-                </div>
-            </li>
-        </ul>
+        <div class="navigation__group">
+            <img class="profile" src="images/carla.jpeg" alt="Carla Machado">
+            <div>
+                <h1>Carla Machado Abi Sáber Miguel</h1>
+                <h2>Desenvolvedora de sistemas</h2>   
+            </div>
+        </div>
+        <div class="dropdown__wrapper hide dropdown__wrapper--fade-in none">
+            <div class="dropdown__group">
+                <div class="email">carlamasm@gmail.com</div>
+            </div>
+            <hr class="divider">
+            <nav>
+                <ul>
+                  <li class="profile-section">
+                    
+                    <span class="knowledge">Meus conhecimentos</span>
+                  </li>
+                  <li class="skills-container">
+                    <div class="skill-item html">
+                      <img src="images/html (1).png" alt="HTML">
+                      <h1 class="skill-name">HTML</h1>
+                    </div>
+                    <div class="skill-item css">
+                      <img src="images/style-sheet.png" alt="CSS" >
+                      <h1 class="skill-name">CSS</h1>
+                    </div>
+                    <div class="skill-item javascript">
+                      <img src="images/java-script.png" alt="JavaScript" >
+                      <h1 class="skill-name">JavaScript</h1>
+                    </div>
+                    <div class="skill-item python">
+                      <img src="images/python.png" alt="Python">
+                      <h1 class="skill-name">Python</h1>
+                    </div>
+                    <div class="skill-item figma">
+                      <img src="images/figma.png" alt="Figma">
+                      <h1 class="skill-name">Figma</h1>
+                    </div>
+                    <div class="skill-item github">
+                      <img src="images/github.png" alt="Git/Github">
+                      <h1 class="skill-name">Git/Github</h1>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+        </div>
     </header>
-    
-
 
 </body>
+
+<script src="script.js"></script>
+</body>
+<footer>
+    <ul class="wrapper">
+        <li class="icon facebook">
+            <span class="tooltip">Facebook</span>
+        </li>
+        <li class="icon github">
+            <span class="tooltip">Github</span>
+        </li>
+    </ul>
+</footer>
 </html>
