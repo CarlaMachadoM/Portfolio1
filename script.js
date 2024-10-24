@@ -1,31 +1,44 @@
 const profile = document.querySelector('.profile');
 const dropdown = document.querySelector('.dropdown__wrapper');
 const cabecalho = document.querySelector('.cabecalho');
+const seta = document.querySelector('.navigation__group > i'); // Seleciona o ícone da seta
 
+// Evento de clique na foto do perfil
 profile.addEventListener('click', () => {
-    dropdown.classList.remove('none');
-    dropdown.classList.toggle('hide');
-    
-    if (!dropdown.classList.contains('hide')) {
-        dropdown.classList.add('dropdown__wrapper--fade-in');
-    } else {
-        dropdown.classList.remove('dropdown__wrapper--fade-in');
-    }
-
-    cabecalho.classList.toggle('no-blur');
-    dropdown.classList.toggle('no-blur');
+  toggleDropdown();
 });
 
-document.addEventListener("click", (event) => {
-    const isClickInsideDropdown = dropdown.contains(event.target);
-    const isProfileClicked = profile.contains(event.target);
+// Evento de clique no ícone da seta
+seta.addEventListener('click', () => {
+  toggleDropdown();
+});
 
-    if (!isClickInsideDropdown && !isProfileClicked) {
-        dropdown.classList.add('hide');
-        dropdown.classList.remove('dropdown__wrapper--fade-in');
-        cabecalho.classList.remove('no-blur');
-        dropdown.classList.remove('no-blur');
-    }
+// Função para alternar o estado do dropdown
+function toggleDropdown() {
+  dropdown.classList.remove('none');
+  dropdown.classList.toggle('hide');
+
+  if (!dropdown.classList.contains('hide')) {
+    dropdown.classList.add('dropdown__wrapper--fade-in');
+  } else {
+    dropdown.classList.remove('dropdown__wrapper--fade-in');
+  }
+
+  cabecalho.classList.toggle('no-blur');
+  dropdown.classList.toggle('no-blur');
+}
+
+document.addEventListener("click", (event) => {
+  const isClickInsideDropdown = dropdown.contains(event.target);
+  const isProfileClicked = profile.contains(event.target);
+  const isSetaClicked = seta.contains(event.target); // Verifica se o clique foi na seta
+
+  if (!isClickInsideDropdown && !isProfileClicked && !isSetaClicked) { 
+    dropdown.classList.add('hide');
+    dropdown.classList.remove('dropdown__wrapper--fade-in');
+    cabecalho.classList.remove('no-blur');
+    dropdown.classList.remove('no-blur');
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -50,3 +63,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
