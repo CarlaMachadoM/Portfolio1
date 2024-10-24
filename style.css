@@ -563,6 +563,7 @@ header li{
 .skill-item:hover {
   transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
+  background-color: #ca633c;
 }
 
 .skill-item img {
@@ -705,6 +706,7 @@ footer {
   align-items: center;
   padding: 20px;
   text-align: center;
+  box-shadow: 0 2px 8px black;
 }
 
 .contateme{
@@ -766,6 +768,11 @@ footer {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  background-color:#cc5429;
+}
+
+.linkedin, .github1{
+  background-color:#960747;
 }
 
 .wrapper .tooltip{
