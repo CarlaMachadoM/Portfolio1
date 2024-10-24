@@ -29,6 +29,20 @@ body, html {
   color: #ffffff;
 }
 
+.info {
+  display: none; /* Esconde todas as informações por padrão */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  margin: 20px 0; /* Espaçamento vertical entre as seções de informação */
+}
+
+.info-wrapper {
+  display: flex; /* Usar Flexbox para centralização */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 50vh; /* Altura total da janela de visualização */
+}
+
+
 .background-image {
   position: fixed;
   top: 0;
@@ -121,6 +135,7 @@ body, html {
   }
 }
 
+/* burger */
 .burgers {
   display: grid;
   margin: 0 auto;
@@ -128,6 +143,7 @@ body, html {
   grid-template-rows: 8rem 8rem;
   gap: 2rem;
   align-items: center;
+  margin-left: 100px;
 }
 
 .burger-wrapper {
@@ -135,7 +151,7 @@ body, html {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  height: 4.5rem;
+  height: 6.5rem;
 }
 
 /* burger 06 */
@@ -145,8 +161,8 @@ body, html {
 
 .burger-6 .toggle {
   position: relative;
-  width: 35px;
-  height: 35px;
+  width: 55px;
+  height: 105px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -170,6 +186,7 @@ body, html {
 
 .burger-6 #bar1, #bar3 {
   width: 70%;
+  margin: 10px;
 }
 
 .burger-6 input[type='checkbox']:checked + .toggle .bars {
@@ -203,7 +220,7 @@ body, html {
 .burger-6 .dropdown-menu {
   display: none; 
   position: absolute;
-  top: 4.5rem; 
+  top: 7.5rem; 
   background-color: rgba(164, 92, 124, 0.58); /* Alterado para manter o fundo */
   border: 1px solid rgba(164, 92, 124, 0.58);
   padding: 10px;
@@ -294,14 +311,14 @@ body, html {
 .cabecalho h1 {
   font-size: 1.5rem; 
   margin-right: 100px;
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: lighter;
   margin-bottom: 10px;
 }
 
 .cabecalho h2 {
   color: #960747;
-  text-decoration: underline;
+  text-decoration: none;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -329,7 +346,7 @@ body, html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  backdrop-filter: none
+  backdrop-filter: none;
 }
 
 
@@ -736,6 +753,8 @@ nav > ul > li:hover {
 }
 
 
+
+
 /* footer */
 
 footer {
@@ -743,12 +762,18 @@ footer {
   bottom: 0;
   width: 100%;
   height: 6rem;
-  background-color: var(--bg); /* Ajuste a cor de fundo conforme necessário */
+  background-color: rgba(255, 235, 205, 0.164);
+  backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   text-align: center;
+}
+
+.contateme{
+  margin-right: 10px;
+  font-size: 1.2rem;
 }
 
 .wrapper{
@@ -776,11 +801,42 @@ footer {
   transition: all 0.2 cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+.wrapper .icon a {
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 0.875rem;
+  background: rgb(0, 0, 0);
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover a .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .wrapper .tooltip{
   position: absolute;
   top:0;
   font-size: 0.875rem;
-  background: white;
+  background: rgb(0, 0, 0);
   color: white;
   padding: 5px 8px;
   border-radius: 5px;
@@ -794,7 +850,7 @@ footer {
   content: "";
   height: 8px;
   width: 8px;
-  background: white;
+  background: rgb(158, 37, 112);
   bottom: -3px;
   left: 50%;
   transform: translate(-50%) rotate(45deg);
@@ -808,23 +864,14 @@ footer {
   pointer-events: auto;
 }
 
+
+.linkedin, .github{
+  background-color: rgb(158, 37, 112);
+}
+
 .wrapper .icon:hover span,
 .wrapper .icon:hover .tooltip{
   text-shadow: black;
-}
-
-.wrapper .facebook:hover,
-.wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip::before{
-  background: var(--facebook);
-  color:white;
-}
-
-.wrapper .x:hover,
-.wrapper .x:hover .tooltip,
-.wrapper .x:hover .tooltip::before{
-  background: var(--x);
-  color:white;
 }
 
 .wrapper .github:hover,
@@ -834,12 +881,6 @@ footer {
   color:white;
 }
 
-.wrapper .instagram:hover,
-.wrapper .instagram:hover, .tooltip,
-.wrapper .instagram:hover, .tooltip::before{
-  background: var(--instagram);
-  color:white;
-}
 
 .wrapper .linkedin:hover,
 .wrapper .linkedin:hover, .tooltip,

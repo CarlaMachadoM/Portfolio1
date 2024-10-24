@@ -28,3 +28,25 @@ document.addEventListener("click", (event) => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+    const infoSections = document.querySelectorAll('.info');
+
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', function(event) {
+            event.preventDefault(); // Impede o comportamento padrão do link
+
+            // Esconde todas as informações
+            infoSections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Mostra a informação correspondente ao item clicado
+            const targetId = item.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
+        });
+    });
+});
