@@ -1,16 +1,16 @@
 :root { 
   --bg: #F6F8FC;
-  --primary: #ca633c;
-  --secondary: #e36f58;
-  --h2-color: #5B5D72;
+  --primary: #C7961C;
+  --secondary: #767E6D;
+  --h2-color: #7E8F44;
   --text: white;
   --cube-side: 2.75rem;
   --cube-side-half: calc(var(--cube-side) / 2);
   --border-radius: 2rem;
-  --btn-bg: #e36f58;
+  --btn-bg:#192c13;
   --glow-size: 0.5rem;
   --facebook: #1877f2;
-  --github: #24292e;
+  --github: #505050;
   --instagram: #e4405f;
   --linkedin: #0177b5;
 }
@@ -63,7 +63,7 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #000000;
+  color: #ffffff;
   position: fixed; 
   top: 20px; 
   left: 50%; 
@@ -86,9 +86,9 @@ body, html {
 
 .button-glow:before {
   content: '';
-  background: linear-gradient(to right, #cc5429,#eb5d41,
-          #581133, #922858, #cc5429, #eb5d41,
-          #581133, #922858, #cc5429);
+  background: linear-gradient(to right, #7E8F44,#C7961C,
+          #767E6D, #192c13, #7E8F44, #C7961C,
+          #767E6D, #192c13, #7E8F44);
   position: absolute;
   background-size: 300%;
   z-index: -1;
@@ -135,16 +135,14 @@ body, html {
   }
 }
 
-/* burger */
 .burgers {
   display: grid;
   margin: 0 auto;
-  grid-template-columns: 6.5rem 6.5rem 6.5rem;
-  grid-template-rows: 8rem 8rem;
+  grid-template-columns: 6.5rem;
   gap: 2rem;
   align-items: center;
+  margin-top: 5rem;
   margin-left: 5rem;
-  margin-top: 2rem;
 }
 
 .burger-wrapper {
@@ -155,7 +153,6 @@ body, html {
   height: 6.5rem;
 }
 
-/* burger 06 */
 .burger-6 #ck-6 {
   display: none;
 }
@@ -163,71 +160,65 @@ body, html {
 .burger-6 .toggle {
   position: relative;
   width: 55px;
-  height: 105px;
+  height: 55px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 7px;
-  transition-duration: .5s;
+  transition: transform 0.3s ease;
 }
 
 .burger-6 .bars {
   width: 100%;
-  height: 5px;
+  height: 4px;
   background: var(--primary);
   border-radius: 6px;
-  box-shadow: 0 2px 8px black;
-}
-
-.burger-6 #bar2 {
-  transition-duration: .8s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: 0.4s;
 }
 
 .burger-6 #bar1, #bar3 {
   width: 70%;
-  margin: 10px;
+  margin: 8px 0;
+  transition: width 0.3s ease;
 }
 
 .burger-6 input[type='checkbox']:checked + .toggle .bars {
   position: absolute;
-  transition-duration: .5s;
 }
 
 .burger-6 input[type='checkbox']:checked + .toggle #bar2 {
   transform: scaleX(0);
-  transition-duration: .5s;
 }
 
 .burger-6 input[type='checkbox']:checked + .toggle #bar1 {
   width: 100%;
   transform: rotate(45deg);
-  transition-duration: .5s;
 }
 
 .burger-6 input[type='checkbox']:checked + .toggle #bar3 {
   width: 100%;
   transform: rotate(-45deg);
-  transition-duration: .5s;
 }
 
 .burger-6 input[type='checkbox']:checked + .toggle {
-  transition-duration: .5s;
   transform: rotate(180deg);
 }
 
-/* burger dropdown */
 .burger-6 .dropdown-menu {
-  display: none; 
+  display: none;
   position: absolute;
-  top: 7.5rem; 
-  left: 3rem;
-  background-color: rgba(164, 92, 124, 0.58); /* Alterado para manter o fundo */
-  border: 1px solid rgba(164, 92, 124, 0.58);
+  top: 9.5rem;
+  left: 4rem;
+  min-width: 160px;
+  background-color: #192c1377;
   padding: 10px;
-  box-shadow: 0 2px 8px #ca633c;
-  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  z-index: 100;
 }
 
 .burger-6 .dropdown-menu ul {
@@ -238,23 +229,30 @@ body, html {
 
 .burger-6 .dropdown-menu ul li {
   margin: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha entre itens */
+}
+
+.burger-6 .dropdown-menu ul li:last-child {
+  border-bottom: none; /* Remove a linha do último item */
 }
 
 .burger-6 .dropdown-menu ul li a {
   text-decoration: none;
-  color: black;
-  padding: 5px 10px;
+  color: #fff;
+  padding: 8px 12px;
   display: block;
   font-family: monospace;
-  font-size: 18px;
-  transition: 1s;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 4px;
 }
 
 .burger-6 .dropdown-menu ul li a:hover {
-  background-color: #f3bc7880; 
-  transition: 1s;
-  border-radius: 10px;
+  background-color: #7E8F44;
+  color: #fff;
+  transform: scale(1.05);
 }
+
 
 /* Mostrar o menu dropdown quando o checkbox estiver marcado */
 .burger-6 #ck-6:checked ~ .dropdown-menu {
@@ -318,21 +316,21 @@ body, html {
 }
 
 .cabecalho h2 {
-  color: #960747;
+  color: #C7961C;
   text-decoration: none;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .cabecalho h3 {
-  color: #ca633c;
+  color: #767E6D;
   text-decoration: none;
   font-size: 1.1rem;
   margin: 5px 0;
 }
 
 .cabecalho h4 {
-  color: #5B5D72;
+  color: #7E8F44;
   text-decoration: none;
   font-size: 1rem;
 }
@@ -380,12 +378,12 @@ body, html {
 }
 
 .habilidade p:hover{
-  color: #960747;
+  color: #767E6D;
 }
 
 .habilidade:hover img{
-  background-color: #960747;
-  box-shadow: 0px 8px 20px rgb(255, 238, 0);
+  background-color: #7E8F44;
+  box-shadow: 0px 8px 20px #C7961C;
   cursor: pointer;
 }
 
@@ -473,7 +471,7 @@ header li{
   transform: scale(1.05);
   transition: all 0.2s ease-in-out;
   backdrop-filter: none;
-  background: conic-gradient(from var(--angle), #ff4400, rgb(255, 0, 128));
+  background: conic-gradient(from var(--angle), #767E6D 0%, #192c13 100%);
   padding: 3px;
   animation: spin 5s linear infinite;
 }
@@ -502,9 +500,9 @@ header li{
 }
 
 .dropdown__wrapper {
-  width: 320px; /* Ajuste para melhor proporção */
+  width: 320px; 
   height: auto;
-  top: 10rem; /* Mais próximo do topo */
+  top: 10rem; 
   right: 20px;
   position: absolute;
   border-radius: 12px;
@@ -515,10 +513,12 @@ header li{
   padding: 20px;
   overflow: hidden;
   backdrop-filter: blur(20px);
-  background: linear-gradient(to right, #ff5757e8 0%, rgba(255, 105, 180, 0.4) 100%);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  background: linear-gradient(to right, #192c13af 0%, #767E6D 100%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
   animation: fadeOutAnimation ease-in-out 0.3s forwards;
-  transition: all 0.3s ease; /* Transição suave ao exibir/ocultar */
+  transition: all 0.3s ease; 
+  border-bottom: 1px solid #ffffff44; /* Cor e opacidade da linha */
+  padding-bottom: 0.625rem; /* Espaço entre a linha e o conteúdo */
 }
 
 .dropdown__wrapper.no-blur {
@@ -545,25 +545,26 @@ header li{
 .skills-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Reduzindo o espaçamento entre as habilidades */
+  gap: 20px; 
   padding: 20px;
   margin-top: -10px;
-  background-color: rgba(255, 255, 255, 0.1); /* Fundo leve */
-  border-radius: 12px; /* Bordas arredondadas */
+  background-color: rgba(255, 255, 255, 0.1); 
+  border-radius: 12px; 
 }
 
 .skill-item {
-  position: relative; /* Para posicionar o h1 */
-  padding: 10px; /* Espaçamento interno */
-  border-radius: 8px; /* Bordas arredondadas */
-  background: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
-  transition: transform 0.3s ease; /* Transição ao passar o mouse */
+  position: relative; 
+  padding: 10px; 
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease; 
 }
 
 .skill-item:hover {
   transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
-  background-color: #ca633c;
+  background-color: #C7961C;
+  cursor: pointer;
 }
 
 .skill-item img {
@@ -582,7 +583,7 @@ header li{
   top: 100%; 
   left: 50%; 
   transform: translateX(-50%); 
-  color: #960747; 
+  color: #C7961C; 
   padding: 5px 10px;
   border-radius: 5px; 
   display: none; /* Oculta o h1 por padrão */
@@ -606,14 +607,14 @@ header li{
   display: block; /* Exibe o h1 ao passar o mouse */
   font-size: 1.3rem;
   transition: 1s;
-  background-color: rgba(202, 98, 60, 0.8); /* Fundo do nome da skill */
+  background-color:  #192c13; /* Fundo do nome da skill */
   text-decoration: none;
   padding: 10px;
 }
 
 .knowledge {
   font-size: 1.8rem;
-  color:#960747;
+  color:#C7961C;
   
   margin-left: 10px;
   text-align: center; /* Centraliza o texto */
@@ -768,11 +769,11 @@ footer {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  background-color:#cc5429;
+  background-color:#767E6D;
 }
 
 .linkedin, .github1{
-  background-color:#960747;
+  background-color:#192c13;
 }
 
 .wrapper .tooltip{
@@ -793,7 +794,7 @@ footer {
   content: "";
   height: 8px;
   width: 8px;
-  background: rgb(158, 37, 112);
+  background: #C7961C;
   bottom: -3px;
   left: 50%;
   transform: translate(-50%) rotate(45deg);
@@ -814,27 +815,13 @@ footer {
   text-shadow: black;
 }
 
-.wrapper .github:hover,
-.wrapper .github:hover, .tooltip,
-.wrapper .github:hover, .tooltip::before{
-  background: var(--github);
-  color:white;
-}
 
-
-.wrapper .linkedin:hover,
-.wrapper .linkedin:hover, .tooltip,
-.wrapper .linkedin:hover, .tooltip::before{
-  background: var(--linkedin);
-  color:white;
-  fill: white;
-}
 
 
 /* Icone para indicar interação na foto do perfil */
 .navigation__group > i {
-  color: #ffffff; /* Cor do ícone */
-  font-size: 1.2rem; /* Tamanho do ícone */
-  margin-left: 8px; /* Espaçamento entre a foto e o ícone */
-  cursor: pointer; /* Define um cursor de ponteiro para indicar interação */
+  color: #ffffff; 
+  font-size: 1.2rem; 
+  margin-left: 8px; 
+  cursor: pointer; 
 }
