@@ -1,8 +1,8 @@
 :root { 
   --bg: #F6F8FC;
-  --primary: #C7961C;
-  --secondary: #767E6D;
-  --h2-color: #7E8F44;
+  --primary: #FCB5AC;
+  --secondary: #FCB5AC;
+  --h2-color: #B5E5CF;
   --text: white;
   --cube-side: 2.75rem;
   --cube-side-half: calc(var(--cube-side) / 2);
@@ -86,9 +86,9 @@ body, html {
 
 .button-glow:before {
   content: '';
-  background: linear-gradient(to right, #7E8F44,#C7961C,
-          #767E6D, #192c13, #7E8F44, #C7961C,
-          #767E6D, #192c13, #7E8F44);
+  background: linear-gradient(to right, #B99095, #FCB5AC,
+          #B5E5CF, #3D5B59, #B99095,  #FCB5AC,
+          #B5E5CF, #3D5B59, #B99095);
   position: absolute;
   background-size: 300%;
   z-index: -1;
@@ -248,7 +248,7 @@ body, html {
 }
 
 .burger-6 .dropdown-menu ul li a:hover {
-  background-color: #7E8F44;
+  background-color: #B5E5CF;
   color: #fff;
   transform: scale(1.05);
 }
@@ -316,21 +316,21 @@ body, html {
 }
 
 .cabecalho h2 {
-  color: #C7961C;
+  color: #FCB5AC;
   text-decoration: none;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .cabecalho h3 {
-  color: #767E6D;
+  color: #B99095;
   text-decoration: none;
   font-size: 1.1rem;
   margin: 5px 0;
 }
 
 .cabecalho h4 {
-  color: #7E8F44;
+  color: #B99095;
   text-decoration: none;
   font-size: 1rem;
 }
@@ -382,7 +382,7 @@ body, html {
 }
 
 .habilidade:hover img{
-  background-color: #7E8F44;
+  background-color: #B5E5CF;
   box-shadow: 0px 8px 20px #C7961C;
   cursor: pointer;
 }
@@ -471,7 +471,7 @@ header li{
   transform: scale(1.05);
   transition: all 0.2s ease-in-out;
   backdrop-filter: none;
-  background: conic-gradient(from var(--angle), #767E6D 0%, #192c13 100%);
+  background: conic-gradient(from var(--angle), #B99095 0%, #FCB5AC 100%);
   padding: 3px;
   animation: spin 5s linear infinite;
 }
@@ -513,7 +513,7 @@ header li{
   padding: 20px;
   overflow: hidden;
   backdrop-filter: blur(20px);
-  background: linear-gradient(to right, #192c13af 0%, #767E6D 100%);
+  background: linear-gradient(to right, #b9909573 0%, #fcb5ac7e 100%);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
   animation: fadeOutAnimation ease-in-out 0.3s forwards;
   transition: all 0.3s ease; 
@@ -563,7 +563,7 @@ header li{
 .skill-item:hover {
   transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
-  background-color: #C7961C;
+  background-color: #FCB5AC;
   cursor: pointer;
 }
 
@@ -583,7 +583,7 @@ header li{
   top: 100%; 
   left: 50%; 
   transform: translateX(-50%); 
-  color: #C7961C; 
+  color: #B5E5CF; 
   padding: 5px 10px;
   border-radius: 5px; 
   display: none; /* Oculta o h1 por padrão */
@@ -614,7 +614,7 @@ header li{
 
 .knowledge {
   font-size: 1.8rem;
-  color:#C7961C;
+  color:#223b3a;
   
   margin-left: 10px;
   text-align: center; /* Centraliza o texto */
@@ -794,7 +794,7 @@ footer {
   content: "";
   height: 8px;
   width: 8px;
-  background: #C7961C;
+  background: #3D5B59;
   bottom: -3px;
   left: 50%;
   transform: translate(-50%) rotate(45deg);
