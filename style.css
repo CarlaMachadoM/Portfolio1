@@ -55,8 +55,8 @@ body, html {
 
 /* button */
 .button-glow {
-  width: 80vh;
-  height: 21.5vh;
+  width: 50rem;
+  height: 9.5rem;
   text-decoration: none;
   user-select: none;
   display: flex;
@@ -76,7 +76,7 @@ body, html {
   font-weight: bold;
   font-size: 17px;
   box-shadow: 0 1px 4px black;
-  margin-left: -200px;
+  margin-left: -300px;
 }
 
 .button-glow:hover{
