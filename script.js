@@ -64,3 +64,15 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+function mostrarProjetos() {
+  const container = document.getElementById('projetos-container');
+  // Mostrar ou esconder os projetos com efeito
+  if (container.style.display === "none") {
+      container.style.display = "flex";
+  } else {
+      container.style.display = "none";
+  }
+}
+
+
+

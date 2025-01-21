@@ -12,36 +12,33 @@
 <body>
     <div class="page-container">
         <!-- imagem de fundo -->
-        <img id="backgroundImage" src="images/trees-in-vastra-gotaland-jc.jpg" alt="Background Image" class="background-image">
-
-        <!-- botão burger lateral esquerda -->
-        <div class="burgers">
-            <div class="burger-wrapper">
-              <div class="burger-6" title="Procure">
-                <input type="checkbox" id="ck-6">
-                <label for="ck-6" class="toggle">
-                  <div class="bars" id="bar1"></div>
-                  <div class="bars" id="bar2"></div>
-                  <div class="bars" id="bar3"></div>
-                </label>
+        <img id="backgroundImage" src="images/1265740.png" alt="Background Image" class="background-image">
           
-                <div class="dropdown-menu">
-                  <ul>
-                    <li><a href="#" class="dropdown-item" data-target="info1">Projeto 1</a></li>
-                    <li><a href="#" class="dropdown-item" data-target="info2">Projeto 2</a></li>
-                    <li><a href="#" class="dropdown-item" data-target="info3">Projeto 3</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+            
     
        
         
         <!-- botão glow -->
-        <a href="#" class='button-glow'>
-            Meus projetos
-        </a>
+        <a href="#" class="button-glow" onclick="mostrarProjetos()">Meus projetos</a>
+
+        <div id="projetos-container" class="projetos-container" style="display: none;">
+            <div class="projeto">
+                <img src='./images/englishlands.PNG' alt="Projeto 1">
+                <a href="https://carlamachadom.github.io/The-English-Lands/"> Acesse aqui </a>
+            </div>
+            <div class="projeto">
+                <img src="projeto2.jpg" alt="Projeto 2">
+                <p>Descrição do Projeto 2</p>
+            </div>
+            <div class="projeto">
+                <img src="projeto3.jpg" alt="Projeto 3">
+                <p>Descrição do Projeto 3</p>
+            </div>
+            <!-- Adicione mais projetos conforme necessário -->
+        </div>
+        
+        
+
 
         <!-- Cabeçalho -->
         <header class="cabecalho"> 

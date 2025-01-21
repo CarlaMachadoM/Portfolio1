@@ -1,13 +1,20 @@
+@font-face {
+  font-family: 'Philosopher';
+  src: url('./fonts/Philosopher-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root { 
   --bg: #F6F8FC;
-  --primary: #FCB5AC;
-  --secondary: #FCB5AC;
-  --h2-color: #B5E5CF;
+  --primary: #1f2bd3;
+  --secondary: #477ee4;
+  --h2-color: #ece57b;
   --text: white;
   --cube-side: 2.75rem;
   --cube-side-half: calc(var(--cube-side) / 2);
   --border-radius: 2rem;
-  --btn-bg:#192c13;
+  --btn-bg:#bebebe;
   --glow-size: 0.5rem;
   --facebook: #1877f2;
   --github: #505050;
@@ -24,7 +31,7 @@
 body, html {
   height: 100%; 
   width: 100%;
-  font-family: monospace;
+  font-family: 'Philosopher';
   overflow: hidden;
   color: #ffffff;
 }
@@ -56,27 +63,28 @@ body, html {
 /* button */
 .button-glow {
   width: 50rem;
-  height: 9.5rem;
+  height: 8rem;
   text-decoration: none;
   user-select: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: #819bf3;
   position: fixed; 
   top: 20px; 
-  left: 50%; 
+  left: 40%; 
   transform: translateX(-50%);
   z-index: 2; 
   border-radius: var(--border-radius);
   transition: all 0.5s;
   gap: 0.5rem;
-  font-family: monospace;
+  font-family: 'Philosopher';
   font-weight: bold;
-  font-size: 17px;
+  font-size: 4rem;
   box-shadow: 0 1px 4px black;
   margin-left: -300px;
+  
 }
 
 .button-glow:hover{
@@ -86,9 +94,9 @@ body, html {
 
 .button-glow:before {
   content: '';
-  background: linear-gradient(to right, #B99095, #FCB5AC,
-          #B5E5CF, #3D5B59, #B99095,  #FCB5AC,
-          #B5E5CF, #3D5B59, #B99095);
+  background: linear-gradient(to right, #3052e7, #acb8fc,
+          #032597, #3d89c7, #e9d38a,  #ebdf78,
+          #e5e0b5, #ddda37, #e9db18);
   position: absolute;
   background-size: 300%;
   z-index: -1;
@@ -121,6 +129,35 @@ body, html {
   border-radius: var(--border-radius);
 }
 
+.projetos-container {
+  margin-top: 20rem;
+  margin-left: 39rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Estilo para cada projeto */
+.projeto {
+  width: 250px;
+  text-align: center;
+}
+
+.projeto img {
+  width: 40rem;
+  height: 20rem;
+  border-radius: 10px;
+}
+
+/* Adicionando um efeito de transição */
+.projeto p {
+  margin-top: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
 @keyframes glow {
   0% {
       background-position: 0 0;
@@ -135,130 +172,6 @@ body, html {
   }
 }
 
-.burgers {
-  display: grid;
-  margin: 0 auto;
-  grid-template-columns: 6.5rem;
-  gap: 2rem;
-  align-items: center;
-  margin-top: 5rem;
-  margin-left: 5rem;
-}
-
-.burger-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  height: 6.5rem;
-}
-
-.burger-6 #ck-6 {
-  display: none;
-}
-
-.burger-6 .toggle {
-  position: relative;
-  width: 55px;
-  height: 55px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  transition: transform 0.3s ease;
-}
-
-.burger-6 .bars {
-  width: 100%;
-  height: 4px;
-  background: var(--primary);
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  transition: 0.4s;
-}
-
-.burger-6 #bar1, #bar3 {
-  width: 70%;
-  margin: 8px 0;
-  transition: width 0.3s ease;
-}
-
-.burger-6 input[type='checkbox']:checked + .toggle .bars {
-  position: absolute;
-}
-
-.burger-6 input[type='checkbox']:checked + .toggle #bar2 {
-  transform: scaleX(0);
-}
-
-.burger-6 input[type='checkbox']:checked + .toggle #bar1 {
-  width: 100%;
-  transform: rotate(45deg);
-}
-
-.burger-6 input[type='checkbox']:checked + .toggle #bar3 {
-  width: 100%;
-  transform: rotate(-45deg);
-}
-
-.burger-6 input[type='checkbox']:checked + .toggle {
-  transform: rotate(180deg);
-}
-
-.burger-6 .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 9.5rem;
-  left: 4rem;
-  min-width: 160px;
-  background-color: #192c1377;
-  padding: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-  backdrop-filter: blur(8px);
-  z-index: 100;
-}
-
-.burger-6 .dropdown-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.burger-6 .dropdown-menu ul li {
-  margin: 8px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha entre itens */
-}
-
-.burger-6 .dropdown-menu ul li:last-child {
-  border-bottom: none; /* Remove a linha do último item */
-}
-
-.burger-6 .dropdown-menu ul li a {
-  text-decoration: none;
-  color: #fff;
-  padding: 8px 12px;
-  display: block;
-  font-family: monospace;
-  font-size: 16px;
-  transition: background-color 0.3s, transform 0.2s;
-  border-radius: 4px;
-}
-
-.burger-6 .dropdown-menu ul li a:hover {
-  background-color: #B5E5CF;
-  color: #fff;
-  transform: scale(1.05);
-}
-
-
-/* Mostrar o menu dropdown quando o checkbox estiver marcado */
-.burger-6 #ck-6:checked ~ .dropdown-menu {
-  display: block;
-}
-
 /* cabeçalho info */
 .cabecalho {
   position: absolute;
@@ -270,7 +183,7 @@ body, html {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  font-family: monospace;
+  font-family: 'Philosopher';
   border-radius: 1.5rem; /* Bordas mais sutis */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Bordas mais sutis e elegantes */
@@ -290,6 +203,7 @@ body, html {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); /* Aumenta a sombra no hover */
   background-color: rgba(255, 255, 255, 0.12); /* Leve mudança na cor de fundo */
   border-radius: 1.75rem; /* Leve alteração nas bordas ao passar o mouse */
+  cursor: pointer;
 }
 
 
@@ -316,21 +230,21 @@ body, html {
 }
 
 .cabecalho h2 {
-  color: #FCB5AC;
+  color: #f4fcac;
   text-decoration: none;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .cabecalho h3 {
-  color: #B99095;
+  color: #5ca7ee;
   text-decoration: none;
   font-size: 1.1rem;
   margin: 5px 0;
 }
 
 .cabecalho h4 {
-  color: #B99095;
+  color: #6c86f7;
   text-decoration: none;
   font-size: 1rem;
 }
@@ -378,12 +292,12 @@ body, html {
 }
 
 .habilidade p:hover{
-  color: #767E6D;
+  color: #046d9e;
 }
 
 .habilidade:hover img{
-  background-color: #B5E5CF;
-  box-shadow: 0px 8px 20px #C7961C;
+  background-color: #3a38bb;
+  box-shadow: 0px 8px 20px #000000;
   cursor: pointer;
 }
 
@@ -471,7 +385,7 @@ header li{
   transform: scale(1.05);
   transition: all 0.2s ease-in-out;
   backdrop-filter: none;
-  background: conic-gradient(from var(--angle), #B99095 0%, #FCB5AC 100%);
+  background: conic-gradient(from var(--angle), #9097b9 0%, #071a86 100%);
   padding: 3px;
   animation: spin 5s linear infinite;
 }
@@ -513,7 +427,7 @@ header li{
   padding: 20px;
   overflow: hidden;
   backdrop-filter: blur(20px);
-  background: linear-gradient(to right, #b9909573 0%, #fcb5ac7e 100%);
+  background: linear-gradient(to right, #9490b973 0%, #02048d7e 100%);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
   animation: fadeOutAnimation ease-in-out 0.3s forwards;
   transition: all 0.3s ease; 
@@ -554,23 +468,24 @@ header li{
 
 .skill-item {
   position: relative; 
-  padding: 10px; 
+  padding: 2rem; 
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease; 
 }
 
 .skill-item:hover {
-  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
-  background-color: #FCB5AC;
-  cursor: pointer;
+  transform: scale(1.00); 
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); 
+  background-color: #acbffc;
+  cursor: none;
 }
 
 .skill-item img {
-  height: 3rem;
-  width: 3rem;
-  transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
+  height: 2rem;
+  width: 2rem;
+  transition: transform 0.3s ease; 
+  cursor: none;
 }
 
 .skill-item:hover img {
@@ -583,11 +498,11 @@ header li{
   top: 100%; 
   left: 50%; 
   transform: translateX(-50%); 
-  color: #B5E5CF; 
+  color: #e5e4b5; 
   padding: 5px 10px;
   border-radius: 5px; 
   display: none; /* Oculta o h1 por padrão */
-  font-family: monospace;
+  font-family: 'Philosopher';
   font-weight: lighter;
   transition: 1s;
   margin-bottom: 10px;
@@ -607,14 +522,14 @@ header li{
   display: block; /* Exibe o h1 ao passar o mouse */
   font-size: 1.3rem;
   transition: 1s;
-  background-color:  #192c13; /* Fundo do nome da skill */
+  background-color:  #131a2c; /* Fundo do nome da skill */
   text-decoration: none;
   padding: 10px;
 }
 
 .knowledge {
   font-size: 1.8rem;
-  color:#223b3a;
+  color:#dfd36d;
   
   margin-left: 10px;
   text-align: center; /* Centraliza o texto */
@@ -769,11 +684,11 @@ footer {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  background-color:#767E6D;
+  background-color:#6a85df;
 }
 
 .linkedin, .github1{
-  background-color:#192c13;
+  background-color:#5192f3;
 }
 
 .wrapper .tooltip{
@@ -794,7 +709,7 @@ footer {
   content: "";
   height: 8px;
   width: 8px;
-  background: #3D5B59;
+  background: #ebdf77;
   bottom: -3px;
   left: 50%;
   transform: translate(-50%) rotate(45deg);
