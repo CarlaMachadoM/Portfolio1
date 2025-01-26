@@ -488,7 +488,7 @@ header li{
   transform: scale(1.05);
   transition: all 0.2s ease-in-out;
   backdrop-filter: none;
-  background: conic-gradient(from var(--angle), #9097b9 0%, #071a86 100%);
+  background: conic-gradient(from var(--angle), #9097b9 0%, #c9c768 100%);
   padding: 3px;
   animation: spin 5s linear infinite;
 }
@@ -510,10 +510,11 @@ header li{
 }
 
 .email {
-  color: var(--text);
+  color: black;
   font-size: 1.3rem;
   word-break: break-all;
   padding: 4px 0;
+
 }
 
 .dropdown__wrapper {
@@ -530,7 +531,7 @@ header li{
   padding: 20px;
   overflow: hidden;
   backdrop-filter: blur(20px);
-  background: linear-gradient(to right, #9490b973 0%, #02048d7e 100%);
+  background: linear-gradient(to right, #d8d38d 0%, #02048d7e 100%);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
   animation: fadeOutAnimation ease-in-out 0.3s forwards;
   transition: all 0.3s ease; 
@@ -573,14 +574,14 @@ header li{
   position: relative; 
   padding: 2rem; 
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 27, 180, 0.397);
   transition: transform 0.3s ease; 
 }
 
 .skill-item:hover {
   transform: scale(1.00); 
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); 
-  background-color: #acbffc;
+  background-color: #fce9ac;
   cursor: none;
 }
 
@@ -632,7 +633,7 @@ header li{
 
 .knowledge {
   font-size: 1.8rem;
-  color:#dfd36d;
+  color:#000000;
   
   margin-left: 10px;
   text-align: center; /* Centraliza o texto */
