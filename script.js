@@ -76,3 +76,17 @@ function mostrarProjetos() {
 
 
 
+document.querySelectorAll('.projeto').forEach((projeto) => {
+  projeto.addEventListener('click', () => {
+    const isActive = projeto.classList.contains('active');
+    document.querySelectorAll('.projeto').forEach((p) => p.classList.remove('active')); // Remove o estado ativo de outros projetos
+    if (!isActive) {
+      projeto.classList.add('active'); // Adiciona o estado ativo ao projeto atual
+    }
+  });
+});
+
+
+
+
+

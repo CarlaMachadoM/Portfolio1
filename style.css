@@ -14,13 +14,38 @@
   --cube-side: 2.75rem;
   --cube-side-half: calc(var(--cube-side) / 2);
   --border-radius: 2rem;
-  --btn-bg:#bebebe;
+  --btn-bg:#ffffff;
   --glow-size: 0.5rem;
   --facebook: #1877f2;
   --github: #505050;
   --instagram: #e4405f;
   --linkedin: #0177b5;
 }
+
+/* Personaliza a largura da barra de rolagem */
+::-webkit-scrollbar {
+  width: 12px; /* Ajuste a largura conforme necessário */
+  height: 12px; /* Para barra de rolagem horizontal */
+}
+
+/* Personaliza o trilho da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: #070255; /* Cor do trilho (parte de fundo) */
+  border-radius: 8px;
+}
+
+/* Personaliza o polegar da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background: #d8ca0a; /* Cor do polegar (parte que você arrasta) */
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+/* Efeito de hover no polegar */
+::-webkit-scrollbar-thumb:hover {
+  background: #f0e330; /* Cor ao passar o mouse */
+}
+
 
 * {
   margin: 0;
@@ -62,8 +87,8 @@ body, html {
 
 /* button */
 .button-glow {
-  width: 50rem;
-  height: 8rem;
+  width: 40rem;
+  height: 15vh;
   text-decoration: none;
   user-select: none;
   display: flex;
@@ -73,7 +98,7 @@ body, html {
   color: #819bf3;
   position: fixed; 
   top: 20px; 
-  left: 40%; 
+  left: 40rem; 
   transform: translateX(-50%);
   z-index: 2; 
   border-radius: var(--border-radius);
@@ -130,47 +155,163 @@ body, html {
 }
 
 .projetos-container {
-  margin-top: 20rem;
-  margin-left: 39rem;
+  margin-top: 15rem;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  margin-left: 10rem;
 }
 
-/* Estilo para cada projeto */
 .projeto {
+  position: relative;
   width: 250px;
   text-align: center;
+  cursor: pointer;
+  background:#ddda37;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  transition: .8s;
+  color: #131a2c;
 }
 
-.projeto img {
-  width: 40rem;
-  height: 20rem;
-  border-radius: 10px;
+.projeto:hover {
+  transform: translateY(-5px);
+  background-color: #070255;
+  transition: .8s;
+  color: white;;
 }
 
-/* Adicionando um efeito de transição */
-.projeto p {
-  margin-top: 10px;
-  color: #555;
-  font-size: 14px;
+.projeto-nome {
+  font-size: 16px;
+  font-weight: bold;
 }
+
+
+/* Mantém os detalhes visíveis quando clicado */
+.projeto-detalhes {
+  position: absolute;
+  top: -350%;
+  left: 150%;
+  width: 400px;
+  padding: 10px;
+  display: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  text-align: left;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  border-radius: 20px;
+}
+
+
+/* Exibe detalhes ao passar o mouse e quando clicado */
+.projeto.active .projeto-detalhes,
+.projeto:hover .projeto-detalhes {
+  display: flex;
+  flex-direction: row;
+}
+
+.projeto-detalhes img {
+  width: 250%; /* Garante que a imagem ocupe toda a largura do container */
+  height: 300px; /* Mantém a proporção da imagem */
+  max-height: 550px; /* Define uma altura máxima para as imagens */
+  border-radius: 20px; /* Mantém o arredondamento dos cantos */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer, cortando a imagem se necessário */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra para destacar as imagens */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para efeitos de hover */
+  padding: 10px;
+}
+
+.projeto-botao {
+  height: 10rem; /* Aumenta a altura */
+  width: 5rem; /* Reduz a largura */
+  margin-left: 10px; 
+  margin-top: 70px;
+  backdrop-filter: blur(12px);
+  position: relative; 
+  font-size: 20px; 
+  font-weight: bold; 
+  background: linear-gradient(
+    100deg, 
+    #d8ca0a 0%, 
+    #1c2e57 33%, 
+    #070255 66%, 
+    #d8ca0a 100%
+  );
+  background-size: 300% 100%;
+  color: #ffffff; 
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: transform 0.3s ease;
+  animation: glow 25s infinite; 
+  writing-mode: vertical-rl; /* Torna a escrita vertical */
+  text-orientation:sideways; /* Mantém os caracteres legíveis */
+  text-align: center; /* Centraliza o texto verticalmente */
+  padding: 5px; /* Adiciona espaço ao redor do texto */
+}
+
+.projeto-botao:hover {
+  transform: scale(1.1);
+  background: linear-gradient(
+    10deg, 
+    #d8ca0a 0%, 
+    #1c2e57 33%, 
+    #070255 66%, 
+    #d8ca0a 100%
+  ); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.projeto-detalhes .projeto-botao {
+  display: block;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.pj1, .pj2 {
+  position: relative;
+  margin: 20px auto; /* Centraliza as imagens e adiciona espaçamento maior */
+  width: 90%; /* Ocupa quase toda a largura da tela */
+  max-width: 1200px; /* Limita o tamanho máximo para telas grandes */
+  height: auto; /* Mantém a proporção original da imagem */
+  border-radius: 12px; /* Bordas levemente arredondadas */
+  cursor: pointer;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Reforça a sombra para destacar */
+  transition: transform 0.3s ease, width 0.3s ease; /* Animações suaves */
+}
+
+.pj1:hover, .pj2:hover {
+  transform: scale(1.08);
+}
+
+
 
 @keyframes glow {
   0% {
-      background-position: 0 0;
+    background-position: 0% 50%;
   }
-
+  25% {
+    background-position: 100% 50%;
+  }
   50% {
-      background-position: 300% 0;
+    background-position: 200% 50%;
   }
-
+  75% {
+    background-position: 100% 50%;
+  }
   100% {
-      background-position: 0 0;
+    background-position: 0% 50%;
   }
 }
+
+
 
 /* cabeçalho info */
 .cabecalho {
@@ -178,7 +319,7 @@ body, html {
   top: 20px;
   left: calc(50% + 7rem);
   width: 80vh;
-  height: auto;
+  height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -222,24 +363,26 @@ body, html {
 
 
 .cabecalho h1 {
-  font-size: 1.5rem; 
+  font-size: 1.3rem; 
   margin-right: 100px;
   text-decoration: none;
   font-weight: lighter;
-  margin-bottom: 10px;
+  margin-bottom: -10px;
+  margin-top:-10px;
 }
 
 .cabecalho h2 {
   color: #f4fcac;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 10px;
+  font-size: 1rem;
 }
 
 .cabecalho h3 {
   color: #5ca7ee;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: .8rem;
   margin: 5px 0;
 }
 
@@ -278,46 +421,6 @@ body, html {
 }
 
 
-.habilidade{
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  backdrop-filter: none
-}
-
-.habilidade p{
-  font-size: 0.8rem;
-}
-
-.habilidade p:hover{
-  color: #046d9e;
-}
-
-.habilidade:hover img{
-  background-color: #3a38bb;
-  box-shadow: 0px 8px 20px #000000;
-  cursor: pointer;
-}
-
-.habilidade img{
-  width: 30px;
-  height: 30px;
-  border-radius: 50px;
-  cursor: pointer;
-}
-
-.habilidades-todas{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-  border-radius: 50px;
-  backdrop-filter: none
-}
-
 header{
   position: fixed;
   z-index: 1;
@@ -335,8 +438,8 @@ header li{
 
 .navigation__group > .icon {
   cursor: pointer;
-  width: 36px;
-  height: 36px;
+  width: 25px;
+  height: 25px;
   transition: all 0.2s ease-in-out;
   backdrop-filter: none;
 }
@@ -356,13 +459,13 @@ header li{
 
 .profile {
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
   border-radius: 50%;
   filter: drop-shadow(-20px 0 10px rgba(0, 0, 0, 0.1));
   backdrop-filter: none;
-  
+  margin-top:-10px;
 }
 
 .profile  a::after,
@@ -414,9 +517,9 @@ header li{
 }
 
 .dropdown__wrapper {
-  width: 320px; 
-  height: auto;
-  top: 10rem; 
+  width: 1000px; 
+  height: 1050px;
+  top: 7rem; 
   right: 20px;
   position: absolute;
   border-radius: 12px;
@@ -614,7 +717,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 6rem;
+  height: 4rem;
   background-color: rgba(255, 235, 205, 0.164);
   backdrop-filter: blur(4px);
   display: flex;
@@ -685,10 +788,12 @@ footer {
   visibility: visible;
   pointer-events: auto;
   background-color:#6a85df;
+  
 }
 
 .linkedin, .github1{
   background-color:#5192f3;
+  size: 20px;
 }
 
 .wrapper .tooltip{

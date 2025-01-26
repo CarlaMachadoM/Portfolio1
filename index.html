@@ -13,33 +13,36 @@
     <div class="page-container">
         <!-- imagem de fundo -->
         <img id="backgroundImage" src="images/1265740.png" alt="Background Image" class="background-image">
-          
-            
-    
-       
-        
-        <!-- botão glow -->
+
         <a href="#" class="button-glow" onclick="mostrarProjetos()">Meus projetos</a>
 
         <div id="projetos-container" class="projetos-container" style="display: none;">
-            <div class="projeto">
-                <img src='./images/englishlands.PNG' alt="Projeto 1">
-                <a href="https://carlamachadom.github.io/The-English-Lands/"> Acesse aqui </a>
+            <div class="projeto" onmouseover="mostrarDetalhes(this)" onmouseout="esconderDetalhes(this)">
+                <span class="projeto-nome">The English Lands</span>
+                <div class="projeto-detalhes">
+                    <img class="pj1" src='./images/englishlands.PNG' alt="Projeto 1">
+                    <img class="pj1" src='./images/english2.PNG' alt="Projeto 1">
+                    <a href="https://carlamachadom.github.io/The-English-Lands/" class="projeto-botao">Acesse aqui</a>
+                </div>
             </div>
-            <div class="projeto">
-                <img src="projeto2.jpg" alt="Projeto 2">
-                <p>Descrição do Projeto 2</p>
+            <div class="projeto" onmouseover="mostrarDetalhes(this)" onmouseout="esconderDetalhes(this)">
+                <span class="projeto-nome">Sistema Solar</span>
+                <div class="projeto-detalhes">
+                  <img class="pj2" src="./images/ss.PNG" alt="Projeto 2">
+                  <img class="pj2" src="./images/ss2.PNG" alt="Projeto 2">
+                  <a href="#" class="projeto-botao">Acesse aqui</a>
+                </div>
+              </div>
+              
+            <div class="projeto" onmouseover="mostrarDetalhes(this)" onmouseout="esconderDetalhes(this)">
+                <span class="projeto-nome">Clínica</span>
+                <div class="projeto-detalhes">
+                    <img src="projeto3.jpg" alt="Projeto 3">
+                    <a href="#" class="projeto-botao">Acesse aqui</a>
+                </div>
             </div>
-            <div class="projeto">
-                <img src="projeto3.jpg" alt="Projeto 3">
-                <p>Descrição do Projeto 3</p>
-            </div>
-            <!-- Adicione mais projetos conforme necessário -->
         </div>
-        
-        
-
-
+    
         <!-- Cabeçalho -->
         <header class="cabecalho"> 
             <div class="navigation__group">
@@ -85,6 +88,10 @@
                             <div class="skill-item figma">
                                 <img src="images/figma.png" alt="Figma">
                                 <h1 class="skill-name">Figma</h1>
+                            </div>
+                            <div class="skill-item figma">
+                                <img src="images/sql-server.png" alt="SQL">
+                                <h1 class="skill-name">SQL</h1>
                             </div>
                         </li>
                     </ul>
