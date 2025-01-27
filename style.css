@@ -98,7 +98,7 @@ body, html {
   color: #819bf3;
   position: fixed; 
   top: 20px; 
-  left: 40rem; 
+  left: 50rem; 
   transform: translateX(-50%);
   z-index: 2; 
   border-radius: var(--border-radius);
@@ -175,6 +175,7 @@ body, html {
   transition: transform 0.3s ease;
   transition: .8s;
   color: #131a2c;
+  top: 10rem;
 }
 
 .projeto:hover {
@@ -190,12 +191,12 @@ body, html {
 }
 
 
-/* Mantém os detalhes visíveis quando clicado */
+
 .projeto-detalhes {
   position: absolute;
   top: -350%;
   left: 150%;
-  width: 400px;
+  width: 600px;
   padding: 10px;
   display: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -208,7 +209,7 @@ body, html {
 }
 
 
-/* Exibe detalhes ao passar o mouse e quando clicado */
+
 .projeto.active .projeto-detalhes,
 .projeto:hover .projeto-detalhes {
   display: flex;
@@ -216,13 +217,13 @@ body, html {
 }
 
 .projeto-detalhes img {
-  width: 250%; /* Garante que a imagem ocupe toda a largura do container */
-  height: 300px; /* Mantém a proporção da imagem */
-  max-height: 550px; /* Define uma altura máxima para as imagens */
-  border-radius: 20px; /* Mantém o arredondamento dos cantos */
-  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer, cortando a imagem se necessário */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra para destacar as imagens */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para efeitos de hover */
+  width: 250%; 
+  height: 300px; 
+  max-height: 550px; 
+  border-radius: 20px;
+  object-fit: cover; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 10px;
 }
 
@@ -313,25 +314,25 @@ body, html {
 
 
 
-/* cabeçalho info */
+
 .cabecalho {
   position: absolute;
   top: 20px;
   left: calc(50% + 7rem);
-  width: 80vh;
+  width: 60vh;
   height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   font-family: 'Philosopher';
-  border-radius: 1.5rem; /* Bordas mais sutis */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordas mais sutis e elegantes */
-  backdrop-filter: blur(12px); /* Mantém o blur no fundo */
-  background-color: rgba(255, 255, 255, 0.08); /* Fundo mais transparente */
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(12px); 
+  background-color: rgba(255, 255, 255, 0.08);
   gap: 20px;
-  transition: all 0.4s ease-in-out; /* Transições mais suaves */
+  transition: all 0.4s ease-in-out; 
 }
 
 
@@ -341,9 +342,9 @@ body, html {
 }
 
 .cabecalho:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); /* Aumenta a sombra no hover */
-  background-color: rgba(255, 255, 255, 0.12); /* Leve mudança na cor de fundo */
-  border-radius: 1.75rem; /* Leve alteração nas bordas ao passar o mouse */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); 
+  background-color: rgba(255, 255, 255, 0.12); 
+  border-radius: 1.75rem; 
   cursor: pointer;
 }
 
@@ -363,12 +364,12 @@ body, html {
 
 
 .cabecalho h1 {
-  font-size: 1.3rem; 
-  margin-right: 100px;
+  font-size: 1.5rem; 
+  margin-right: 80px;
   text-decoration: none;
   font-weight: lighter;
   margin-bottom: -10px;
-  margin-top:-10px;
+  margin-top:10px;
 }
 
 .cabecalho h2 {
@@ -376,7 +377,7 @@ body, html {
   text-decoration: none;
   margin-top: 15px;
   margin-bottom: 10px;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .cabecalho h3 {
@@ -415,7 +416,7 @@ body, html {
   height: 60px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra na imagem */
   position: absolute;
-  margin-top: -55px;
+  margin-top: 40px;
   left: calc(58% + 0rem);
   margin-left: 100px;
 }
