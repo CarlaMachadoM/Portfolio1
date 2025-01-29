@@ -96,7 +96,7 @@ body, html {
   justify-content: center;
   align-items: center;
   color: #819bf3;
-  position: fixed; 
+  position: absolute; 
   top: 20px; 
   left: 50rem; 
   transform: translateX(-50%);
